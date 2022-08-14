@@ -8,5 +8,25 @@
 </head>
 <body>
     <h1>Session is : {{sessionCookie}}</h1>
+     
+    {%for key in keys%}
+{{key}}
+{%endfor%}
+
+{%for item in items%}
+{{item}}
+{%endfor%}
+<br>
+This is get_session_cookie_age
+ {{request.session.get_session_cookie_age}}<br>
+ This is get_expiry_age
+
+ {{request.session.get_expiry_age}}<br>
+ This is get_expiry_date
+
+ {{request.session.get_expiry_date}}<br>
+ This is get_expore_at_browser_close
+
+ {{request.session.get_expire_at_browser_close}}<br>
 </body>
 </html>
