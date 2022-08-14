@@ -120,10 +120,17 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 CACHE_MIDDLEWARE_SECONDS = 30
+# CACHES = {
+#     'default':{
+#         'BACKEND':'django.core.cache.backends.db.DatabaseCache',
+#         'LOCATION':'my_cache_table'
+#     }
+# }
+
 CACHES = {
     'default':{
-        'BACKEND':'django.core.cache.backends.db.DatabaseCache',
-        'LOCATION':'my_cache_table'
+        'BACKEND':'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION':'C:\\Users\\m\\Desktop\\Djanog Geekyshows\\DjangoCache\\DjangoCache\\cachefolder'
     }
 }
 
