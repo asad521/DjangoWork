@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{%load cache%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +11,10 @@
     this is course tmeplate
     <h1>course 1</h1>
     <h1>course 12</h1>
+    {% cache 30 course %}
     <h1>course 13</h1>
     <h1>course 14</h1>
+    {% endcache %}
+
 </body>
 </html>
