@@ -120,20 +120,29 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 CACHE_MIDDLEWARE_SECONDS = 30
+# For DB cache
 # CACHES = {
 #     'default':{
 #         'BACKEND':'django.core.cache.backends.db.DatabaseCache',
 #         'LOCATION':'my_cache_table'
 #     }
 # }
+# For Filebased cache
+
+# CACHES = {
+#     'default':{
+#         'BACKEND':'django.core.cache.backends.filebased.FileBasedCache',
+#         'LOCATION':'C:\\Users\\m\\Desktop\\Djanog Geekyshows\\DjangoCache\\DjangoCache\\cachefolder'
+#     }
+# }
+# For Localmemory cache
 
 CACHES = {
     'default':{
-        'BACKEND':'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION':'C:\\Users\\m\\Desktop\\Djanog Geekyshows\\DjangoCache\\DjangoCache\\cachefolder'
+        'BACKEND':'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION':'unique-snowflake'
     }
 }
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
