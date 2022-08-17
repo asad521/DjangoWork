@@ -7,3 +7,11 @@ class Students(models.Model):
     city = models.CharField(max_length=20 ,default='Unknown')
     marks = models.IntegerField(default=0)
     pass_date = models.DateField()
+    
+    
+class Teachers(models.Model):
+    name = models.CharField(max_length=15 ,default='Unknown')
+    emp_num = models.IntegerField(unique=True, null=False ,default=0)
+    city = models.CharField(max_length=20 ,default='Unknown')
+    salary = models.IntegerField(default=0)
+    join_date = models.DateField()
