@@ -7,6 +7,7 @@ class Students(models.Model):
     city = models.CharField(max_length=20 ,default='Unknown')
     marks = models.IntegerField(default=0)
     pass_date = models.DateField()
+    # enroll_date = models.DateTimeField(default='2022-01-12')
     
     
 class Teachers(models.Model):
