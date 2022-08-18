@@ -16,6 +16,7 @@
           <th>city</th>
           <th>marks</th>
           <th>pass_date</th>
+          <th>enroll_date</th>
         </tr>
         {% for student in students%}
 
@@ -26,6 +27,8 @@
             <td>{{student.city}}</td>
             <td>{{student.marks}}</td>
             <td>{{student.pass_date}}</td>
+            <td>{{student.enroll_date}}</td>
+        
         </tr>
         {% endfor %}
     </table>
