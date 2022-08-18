@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Students
 from datetime import date ,time
+from django.db.models import Avg,Sum,Min,Max,Count ,Q
 # Create your views here.
 def homepage(request):
     students_data = Students.objects.all()
@@ -77,3 +78,25 @@ def homepage(request):
     print('===========================')
     print('SQL Query:', students_data.query)
     return render(request,'home2.html' , {'students':students_data})
+
+
+
+def homeAggregate(request):
+    students_data = Students.objects.all()
+    marks_avrg =students_data.aggregate(Avg('marks'))
+    marks_sum =students_data.aggregate(Sum('marks'))
+    marks_min =students_data.aggregate(Min('marks'))
+    marks_max =students_data.aggregate(Max('marks'))
+    marks_count =students_data.aggregate(Count('marks'))
+    
+    # Q object
+    
+    students_data = Students.objects.filter(Q(id__gt=1) & Q(name='Asad'))
+    students_data = Students.objects.filter(Q(id__gt=1) & ~Q(name='Asad'))
+    
+   
+    print('Output:', students_data)
+    print('===========================')
+    print('SQL Query:', students_data.query)
+    return render(request,'Aggegation.html' , {'students':students_data,
+                                               'marks_avrg':marks_avrg,'marks_count':marks_count,'marks_min':marks_min,'marks_max':marks_max,'marks_sum':marks_sum})

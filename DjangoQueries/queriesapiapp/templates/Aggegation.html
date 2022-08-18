@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Students Data Fetched from DataBase</h1>
+    <table border='true'>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>roll</th>
+          <th>city</th>
+          <th>marks</th>
+          <th>pass_date</th>
+          <th>enroll_date</th>
+        </tr>
+        {% for student in students%}
+
+        <tr>
+            <td>{{student.id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.roll}}</td>
+            <td>{{student.city}}</td>
+            <td>{{student.marks}}</td>
+            <td>{{student.pass_date}}</td>
+            <td>{{student.enroll_date}}</td>
+        
+        
+        </tr>
+        {% endfor %}
+    </table>
+    <h1>Marks Average:{{marks_avrg.marks__avg}}</h1>
+    <h1>Marks Sum:{{marks_sum.marks__sum}}</h1>
+    <h1>Marks min :{{marks_max.marks__max}}</h1>
+    <h1>Marks max:{{marks_min.marks__min}}</h1>
+    <h1>Marks count:{{marks_count.marks__count}}</h1>
+</body>
+</html>      </table>
+</body>
+</html>
