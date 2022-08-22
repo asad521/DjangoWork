@@ -21,7 +21,7 @@ class Teacher(Person):
     salary = models.IntegerField(default=0)
     
 class Contractor(Person):
-    # inherit all fields,override start_date field and add new payment field  
+    # inherita all fields,override start_date field and add new payment field  
     start_date = models.DateTimeField()
     payment = models.IntegerField(default=0)
 
