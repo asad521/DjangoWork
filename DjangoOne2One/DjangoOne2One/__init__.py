@@ -1,0 +1,1 @@
+default_app_config = 'myapp.apps.One2OnerelationshipappConfig'
